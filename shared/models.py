@@ -80,6 +80,17 @@ class smallVGG(nn.Module):
             nn.ReLU(True),
             nn.Linear(512, 10)
         )
+    def forward(self, x):
+        features = self.feature_extractor(x)
+        return self.classifier(features)
+        
+    def create_block(self, in_channels, filters, kernel_size=3, padding=1):
+        return nn.Sequential(
+            nn.Conv2d(in_channels, filters, kernel_size, padding),
+            nn.BatchNorm2d(filters),
+            nn.ReLU(inplace=True)
+        )
+        
 
 
 class TwoStepVgg(nn.Module):

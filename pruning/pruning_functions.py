@@ -22,9 +22,10 @@ def prune_model(model,
      config_list[0]['exclude_op_names'] = [name]
   else:
     config_list[0]['exclude_op_names'] = exclude_op_names
-    
+  
   if not prunner_choice:
     prunner_choice = L1NormPruner
+    
   pruner = prunner_choice(model, config_list)
   _, masks = pruner.compress()
   pruner.unwrap_model()

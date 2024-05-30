@@ -2,3 +2,6 @@
 *.pyc
 shared/data/
 early_exit/models/
+knowledge_distilation/models/
+pruning/models/
+venv/
