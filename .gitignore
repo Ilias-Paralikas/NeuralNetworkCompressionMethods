@@ -1,0 +1,5 @@
+**/__pycache__/
+*.pyc
+*/shared/data/
+demos/cifar10_models/state_dicts/
+demos/prune_lstm/
